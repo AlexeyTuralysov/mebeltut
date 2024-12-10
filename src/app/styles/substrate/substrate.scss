@@ -1,0 +1,139 @@
+@import "./../global/global.scss";
+
+$breakpoint: 900px; // Adjust this breakpoint as needed
+
+.container {
+  margin: 20px; // Reduced margin for smaller screens
+  display: flex; // Added display flex for better mobile layout
+  flex-direction: column; // Stack elements vertically on mobile
+}
+
+@mixin substrate {
+  background-color: $substrate-bg;
+  border: 2px solid $border-color;
+
+}
+
+@mixin rounded {
+  background-color: $substrate-icon;
+  border-radius: 50%
+
+  
+}
+
+.rounded-btn{
+  @include rounded;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+
+  width: 60px;
+  height: 60px;
+  text-align: center;  
+
+  margin: 20px;
+  
+  
+  svg{
+    position: absolute;
+    margin: auto;
+    width: 30px;
+  }
+
+  transition: 0.3s;
+}
+.rounded-btn:hover{
+  padding: 5px;
+  
+  
+}
+
+.substrate-box-about{
+  @include substrate;
+  color: $substrate-text;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 1000px;
+  overflow: hidden;
+  margin: 0;
+
+  @media (min-width: $breakpoint) {
+    
+    width: 1000px;
+    height: 100px;
+    margin: auto;
+  }
+}
+
+.substrate-box {
+  @include substrate;
+  color: $substrate-info;
+  flex: 1; // Allow the map to take up available space
+  display: flex;
+  flex-direction: column; // Stack map and information vertically on mobile
+  width: 100%; // Occupy full width on smaller screens
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+
+  @media (min-width: $breakpoint) {
+    flex-direction: row; // Horizontal arrangement for larger screens
+    width: 1000px;
+    height: 100px;
+    margin: auto;
+  }
+}
+
+.substrate-box-socialmedia {
+  display: flex;
+  background-color: $substrate-icon;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    fill: white;
+    color: white;
+    width: 25px;
+  }
+}
+
+.social-media-box {
+  display: flex;
+  flex-wrap: wrap; // Allow elements to wrap onto multiple lines
+  justify-content: space-around; // Distribute icons evenly
+  width: 100%;
+  padding: 10px; // Reduced padding for mobile
+  gap: 10px;
+
+
+}
+
+.social-media-contacts {
+  display: block;
+  padding: 10px; // Reduced padding
+  text-align: center; // Center text on mobile
+}
+
+.information {
+  display: flex;
+  flex-direction: column; // Stack vertically on mobile
+  align-items: center; // Center elements on mobile
+  padding: 10px;
+  height: 500px;
+
+  @media (min-width: $breakpoint) {
+    display: block; // revert to block for larger screens
+    align-items: initial;
+  }
+}
+
+
+
+

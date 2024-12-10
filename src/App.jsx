@@ -3,6 +3,7 @@
 import Home from './Pages/Home';
 
 import Contacts from './Pages/Contacts';
+import Aboutdelyvey from './Pages/Aboutdelyvey';
 import { Route, Routes } from 'react-router-dom'
 import Header from './widjets/header/header';
 import './app/styles/global/global.scss'
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/delivery" element={<Aboutdelyvey />} />
 
 
       </Routes>
