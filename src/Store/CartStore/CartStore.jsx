@@ -8,24 +8,25 @@ const useStoreCart = create(persist(
     cartStore: [],
 
 
-    addItemToCart: (item) => set((state) => {
-      const existingItem = state.cartStore.find(cartItem => cartItem.id === item.id);
-      if (existingItem) {
-        return {
-
-          cartStore: state.cartStore.map(cartItem =>
-            cartItem.id === item.id
-              ? { ...cartItem, quantity: cartItem.quantity + 1 }
-              : cartItem
-          ),
-        };
-
-      }
-      else {
-        return { cartStore: [...state.cartStore, { ...item, quantity: 1 }] };
-      }
-
-    }),
+    addItemToCart: (item) => {
+      console.log('Добавление товара:', item);
+      set((state) => {
+        const existingItem = state.cartStore.find(cartItem => cartItem.id === item.id);
+        if (existingItem) {
+          console.log('Товар уже в корзине, увеличиваем количество.');
+          return {
+            cartStore: state.cartStore.map(cartItem =>
+              cartItem.id === item.id
+                ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                : cartItem
+            ),
+          };
+        } else {
+          console.log('Товар не найден в корзине, добавляем новый.');
+          return { cartStore: [...state.cartStore, { ...item, quantity: 1 }] };
+        }
+      });
+    },
 
     increaseQuantity: (itemId) => set((state) => ({
       cartStore: state.cartStore.map(item =>

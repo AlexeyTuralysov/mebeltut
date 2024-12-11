@@ -1,28 +1,44 @@
 import Banner from "../widjets/banner/Banner"
 import useStoreCart from "../Store/CartStore/CartStore"
 import { products_item } from "../Products";
-
+import Product from "../widjets/product/product";
 
 
 export default function Home() {
   const { addItemToCart } = useStoreCart();
 
-  
-  
+
+
   return (
     <div>
 
       <Banner />
       <div>
-        <h2>Товары</h2>
-        <ul>
-          {products_item.map((product) => (
-            <li key={product.id}>
-              {product.name} — {product.price}₽
-              <button onClick={() => addItemToCart(product)}>Добавить в корзину</button>
-            </li>
-          ))}
-        </ul>
+
+
+        <div className="catalog">
+          <h2>Каталог</h2>
+          <div className="catalog-products">
+            {products_item.map((product) => (
+              < div key={product.id}>
+
+              <Product product={product} id={product.id} name={product.name} price={product.price} img={product.preview} />
+
+           
+
+
+
+              </div>
+
+            ))}
+          </div>
+
+
+        </div>
+
+
+
+
       </div>
 
 

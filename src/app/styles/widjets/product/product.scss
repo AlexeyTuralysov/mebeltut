@@ -1,0 +1,50 @@
+@import './../../global/global.scss';
+.product-block{
+    width: 300px;
+    height: 350px;
+    position: relative;
+
+    margin-right: 10px;
+    
+    border: 2px solid $substrate-border;
+
+    a{
+        text-decoration: none;
+        color: $substrate-text;
+    }
+
+    .product-image {
+    
+        height: 250px;
+        overflow: hidden;
+        padding: 5px;
+       
+    }
+    .product-image img{
+        width: 100%;
+        overflow: hidden;
+    
+    }
+
+    .product-main-info{
+        padding: 8px;
+    }
+    .product-main-info h2{
+        font-weight: 300;
+        
+    }
+
+}
+
+.catalog{
+ 
+    margin: 20px;
+    h2{
+        font-weight: 400;
+    }
+}
+.catalog-products{
+    display: flex;
+    padding-top: 10px;
+    
+}

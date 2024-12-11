@@ -1,0 +1,65 @@
+@import '../../global/global.scss';
+.detail-parent{
+    display: flex;
+    width: 90%;
+    gap: 10px;
+    margin: 20px;
+
+    
+   
+
+
+    .image-preview{
+        height: 500px;
+        width: 500px;
+        
+
+        background-color: yellow;
+
+        overflow: hidden;
+    }
+    
+
+
+    .name-price{
+        padding: 20px;
+        border: 1px solid $substrate-border;
+        width: 100%;
+        height: 90px;
+
+        span{
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+    }
+    .detail-info{
+        display: block;
+        width: 100%;
+        
+
+    }
+    .detail-descr{
+        width: 100%;
+        border: 1px solid $substrate-border;
+        padding: 20px;
+        
+    }
+    .detail-info-colors{
+        display: flex;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        
+        
+    }
+    .color-swatch{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    
+
+
+}
+
