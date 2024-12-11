@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware'
 
 
 const useStoreCart = create(persist(
-  (set) => ({
+  (set ,get) => ({
 
     cartStore: [],
 
@@ -27,11 +27,35 @@ const useStoreCart = create(persist(
 
     }),
 
+    increaseQuantity: (itemId) => set((state) => ({
+      cartStore: state.cartStore.map(item =>
+        item.id === itemId
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ),
+    })),
+
+    decreaseQuantity: (itemId) => set((state) => ({
+      cartStore: state.cartStore.map(item =>
+        item.id === itemId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      ),
+    })),
+
     removeToCart: (itemId) => set((state) => ({
       cartStore: state.cartStore.filter(item => item.id !== itemId),
     })),
+    clearCart: () => set({ cartStore: [] }),
+
+
+
+    totatPrice: () => {
+      const cart = get().cartStore;
+      return cart.reduce((total, item) => total + item.price * item.quantity, 0)
+    }
   }),
-    {
+  {
     name: "cart-store",
     getStorage: () => localStorage,
   }

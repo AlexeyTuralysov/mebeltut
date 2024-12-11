@@ -1,59 +1,64 @@
 @import "./../global/global.scss";
 
-$breakpoint: 900px; // Adjust this breakpoint as needed
+// Переменные для отступов, размеров и брейкпоинтов
+$breakpoint: 900px; // Изменяемый брейкпоинт для адаптации
+$button-size: 60px;
+$icon-size: 30px;
+$social-icon-size: 50px;
+$social-icon-inner-size: 25px;
+$padding: 20px;
+$box-width: 1000px;
+$box-height: 100px;
+$mobile-height: 500px;
 
-.container {
-  margin: 20px; // Reduced margin for smaller screens
-  display: flex; // Added display flex for better mobile layout
-  flex-direction: column; // Stack elements vertically on mobile
-}
-
-@mixin substrate {
-  background-color: $substrate-bg;
+// Общие миксины для повторяющихся стилей
+@mixin substrate($bg-color: $substrate-bg, $border-color: $border-color) {
+  background-color: $bg-color;
   border: 2px solid $border-color;
-
 }
 
-@mixin rounded {
-  background-color: $substrate-icon;
-  border-radius: 50%
-
-  
+@mixin rounded($bg-color: $substrate-icon) {
+  background-color: $bg-color;
+  border-radius: 50%;
 }
 
-.rounded-btn{
+// Контейнер с адаптивной версткой
+.container {
+  margin: $padding; // Уменьшенные отступы для мобильных устройств
+  display: flex; // Используем flex для лучшей адаптации
+  flex-direction: column; // Вертикальное расположение элементов на мобильных
+}
+
+// Кнопка с закругленными углами
+.rounded-btn {
   @include rounded;
   display: flex;
   justify-content: center;
   align-items: center;
   
-  
+  width: $button-size;
+  height: $button-size;
+  text-align: center;
+  margin: $padding;
 
-  width: 60px;
-  height: 60px;
-  text-align: center;  
-
-  margin: 20px;
-  
-  
-  svg{
+  svg {
     position: absolute;
     margin: auto;
-    width: 30px;
+    width: $icon-size;
   }
 
   transition: 0.3s;
 }
-.rounded-btn:hover{
-  padding: 5px;
-  
-  
+
+.rounded-btn:hover {
+  padding: 5px; // Добавлен padding при наведении
 }
 
-.substrate-box-about{
-  @include substrate;
+// Блок информации с фоном
+.substrate-box-about {
+  @include substrate($substrate-bg, $border-color);
   color: $substrate-text;
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -62,78 +67,74 @@ $breakpoint: 900px; // Adjust this breakpoint as needed
   margin: 0;
 
   @media (min-width: $breakpoint) {
-    
-    width: 1000px;
-    height: 100px;
+    width: $box-width;
+    height: $box-height;
     margin: auto;
   }
 }
 
+// Общий блок с адаптацией под размер экрана
 .substrate-box {
-  @include substrate;
+  @include substrate($substrate-bg, $border-color);
   color: $substrate-info;
-  flex: 1; // Allow the map to take up available space
+  flex: 1;
   display: flex;
-  flex-direction: column; // Stack map and information vertically on mobile
-  width: 100%; // Occupy full width on smaller screens
+  flex-direction: column;
+  width: 100%;
   height: auto;
   overflow: hidden;
   margin: 0;
 
   @media (min-width: $breakpoint) {
-    flex-direction: row; // Horizontal arrangement for larger screens
-    width: 1000px;
-    height: 100px;
+    flex-direction: row;
+    width: $box-width;
+    height: $box-height;
     margin: auto;
   }
 }
 
+// Блок иконки соцсетей
 .substrate-box-socialmedia {
+  @include rounded($substrate-icon);
+  width: $social-icon-size;
+  height: $social-icon-size;
   display: flex;
-  background-color: $substrate-icon;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   justify-content: center;
   align-items: center;
 
   svg {
     fill: white;
-    color: white;
-    width: 25px;
+    width: $social-icon-inner-size;
   }
 }
 
+// Контейнер для соцсетей
 .social-media-box {
   display: flex;
-  flex-wrap: wrap; // Allow elements to wrap onto multiple lines
-  justify-content: space-around; // Distribute icons evenly
+  flex-wrap: wrap; // Возможность переносить элементы на новые строки
+  justify-content: space-around; // Распределение элементов равномерно
   width: 100%;
-  padding: 10px; // Reduced padding for mobile
+  padding: 10px;
   gap: 10px;
-
-
 }
 
+// Контакты в соцсетях
 .social-media-contacts {
   display: block;
-  padding: 10px; // Reduced padding
-  text-align: center; // Center text on mobile
+  padding: 10px;
+  text-align: center;
 }
 
+// Блок информации
 .information {
   display: flex;
-  flex-direction: column; // Stack vertically on mobile
-  align-items: center; // Center elements on mobile
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
-  height: 500px;
+  height: $mobile-height;
 
   @media (min-width: $breakpoint) {
-    display: block; // revert to block for larger screens
+    display: block;
     align-items: initial;
   }
 }
-
-
-
-

@@ -1,8 +1,13 @@
-.cart-block{
+@import "./../../../styles/global/global.scss";
+
+.cart-block {
   position: fixed;
   bottom: 0;
   right: 0;
+
+  padding: 20px;
 }
+
 .ss {
   position: fixed;
   top: 0;
@@ -17,8 +22,18 @@
   transition: right 0.3s;
   z-index: 2;
 
+  padding: 20px;
+  
+  max-width: 100%;  // Убедитесь, что не выйдет за пределы
+  max-height: 100vh; // Чтобы не выходил за пределы экрана
+
   &.open {
     right: 0;
+  }
+
+  h2 {
+    font-weight: 300;
+    padding-bottom: 20px;
   }
 }
 
@@ -31,6 +46,141 @@
 
   &:after {
     display: inline-block;
-    content: "\00d7"; // Крестик 
+    content: "\00d7";
+  }
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: #ff6666;
+  }
+
+  &:active {
+    background-color: #cc0000;
+  }
+}
+
+.block-product {
+  position: relative;
+  display: flex;
+  width: 70%;
+  height: 40%;
+  border: 1px solid $substrate-border;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  .image-product {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background-color: $substrate-border;
+
+    justify-content: center;
+    align-items: center;
+
+
+
+    img {
+
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+
+  .info-product {
+    margin: 5px;
+  }
+}
+
+.total-amount{
+  position: relative;
+  height: 200px;
+
+  .pay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center; 
+    
+    h1{
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-bottom: 1rem; 
+      text-align: left;
+    }
+    
+    button{
+      color: white;
+      background-color: $substrate-border;
+      border: none;
+      display: block; 
+      margin: 0 auto; 
+      width: 100%;
+      height: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-block {
+    bottom: 0;
+    right: 0;
+  }
+
+  .ss {
+    width: 50vh;
+    height: 180vh;
+    overflow: scroll;
+
+    &.open {
+      right: 0;
+    }
+  }
+
+  .block-product {
+    display: flex;
+    width: 90%;
+    height: auto;
+    padding: 5px;
+
+    .image-product {
+      width: 100px;
+      height: 100px;
+    }
+
+    .info-product {
+      margin: 10px 20px;
+
+      h4 {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .close-btn {
+    font-size: 2rem;
+    top: 10px;
+    right: 10px;
+  }
+
+  .delete-button {
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
   }
 }
