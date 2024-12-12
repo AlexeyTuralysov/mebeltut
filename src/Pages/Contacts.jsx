@@ -1,7 +1,8 @@
 
 import './../app/styles/substrate/substrate.scss';
 import './../app/styles/widjets/map/Map.scss';
-
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import MapComponent from '../widjets/mapWidjet/Mapadd';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +12,7 @@ export default function Contacts() {
   return (
     <div className='container'>
       <div className='substrate-box'>
-        <MapComponent />  {/* Только один рендер карты */}
+        <MapComponent /> 
 
         <div className='information'>
           <div className='social-media-box'>
@@ -26,8 +27,8 @@ export default function Contacts() {
           </div>
 
           <div className='social-media-contacts'>
-            <h3>7 (924)-745-58-19</h3>
-            <span>mebeltut@mail.ru</span>
+            <h2><FaPhoneAlt />7 (924)-745-58-19</h2>
+            <h2><IoMdMail />mebeltut@mail.ru</h2>
           </div>
         </div>
       </div>

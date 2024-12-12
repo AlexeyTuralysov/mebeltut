@@ -1,11 +1,10 @@
 import Banner from "../widjets/banner/Banner"
-import useStoreCart from "../Store/CartStore/CartStore"
 import { products_item } from "../Products";
 import Product from "../widjets/product/product";
 
 
 export default function Home() {
-  const { addItemToCart } = useStoreCart();
+
 
 
 
@@ -22,9 +21,9 @@ export default function Home() {
             {products_item.map((product) => (
               < div key={product.id}>
 
-              <Product product={product} id={product.id} name={product.name} price={product.price} img={product.preview} />
+                <Product product={product} id={product.id} name={product.name} price={product.price} img={product.preview} />
 
-           
+
 
 
 

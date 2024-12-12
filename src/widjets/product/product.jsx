@@ -23,7 +23,7 @@ export default function Product({ product, id, name, img, price }) {
 
                 
             </Link>
-            <button className="counter-button" onClick={() => addItemToCart(product) }>+</button>
+            <button className="add-to-cart" onClick={() => addItemToCart(product) }>В корзину</button>
         </div>
     )
 }
