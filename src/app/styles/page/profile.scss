@@ -1,0 +1,36 @@
+@import "../global/global.scss";
+
+@mixin substrate($bg-color: $substrate-bg, $border-color: $border-color) {
+    background-color: $bg-color;
+    border: 2px solid $border-color;
+}
+
+.profile-page {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+    gap: 20px;
+
+}
+.profile-container{
+    display: block;
+    
+}
+.profile-substrate{
+    @include substrate($substrate-bg, $border-color);
+    width: 300px;
+    height: 400px;
+}
+
+.profile-name{
+    @include substrate($substrate-bg, $border-color);
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px
+}
+
+.history-substrate{
+    @include substrate($substrate-bg, $border-color);
+    width: 600px;
+    height: 400px;
+}

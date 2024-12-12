@@ -40,6 +40,7 @@ export default function Header() {
         <Link to="/Contacts" onClick={() => setIsMenuOpen(false)}>Контакты</Link>
         <Link to="/delivery" onClick={() => setIsMenuOpen(false)}>О доставке</Link>
         <Link to="/partner" onClick={() => setIsMenuOpen(false)}>Партнеры</Link>
+        <Link to="/profile" onClick={() => setIsMenuOpen(false)}>Профиль</Link>
       </div>
 
       <div className='profile'>

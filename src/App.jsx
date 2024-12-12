@@ -8,9 +8,11 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './widjets/header/header';
 import './app/styles/global/global.scss'
 
+
 import Cart from './widjets/Cart/Cart';
 import Detail from './Pages/Detail';
 import Delivery from './Pages/Delivery';
+import Profile from './Pages/Profile';
 function App() {
 
 
@@ -26,6 +28,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/partner" element={<AbouParner />} />
         <Route path="/delivery" element={<Delivery />} />
+        <Route path="/profile" element={<Profile/>} />
 
 
         <Route path="/product/:id" element={<Detail />} />

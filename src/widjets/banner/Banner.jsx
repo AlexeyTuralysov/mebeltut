@@ -5,7 +5,7 @@ import Product from '../product/product';
 export default function Banner() {
   return (
     <div className='banner'>
-      <img className='banner-img' src="https://i.pinimg.com/736x/9f/19/7b/9f197b9923666ed3f45d6a909a432e98.jpg" alt="" />
+      <img className='banner-img' src="\public\Group 27.png" alt="" />
 
 
       <div className='product-frame'>

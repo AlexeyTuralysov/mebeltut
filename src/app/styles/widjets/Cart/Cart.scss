@@ -21,10 +21,11 @@
   justify-content: center;
   gap: 20px;
   transition: right 0.3s;
+  overflow: scroll;
   z-index: 2;
 
   padding: 20px;
-  
+ 
   max-width: 100%;  // Убедитесь, что не выйдет за пределы
   max-height: 100vh; // Чтобы не выходил за пределы экрана
 
@@ -105,6 +106,11 @@
 
   .info-product {
     margin: 5px;
+
+    h3{
+      font-size: 13px;
+      font-weight: 400;
+    }
   }
 }
 
