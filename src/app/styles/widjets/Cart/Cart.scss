@@ -1,6 +1,7 @@
 @import "./../../../styles/global/global.scss";
 
 .cart-block {
+  z-index: 2;
   position: fixed;
   bottom: 0;
   right: 0;

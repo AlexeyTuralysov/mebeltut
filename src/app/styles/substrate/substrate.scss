@@ -23,11 +23,25 @@ $mobile-height: 500px;
 }
 
 // Контейнер с адаптивной версткой
+.centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
-  
-  margin: 100px; // Уменьшенные отступы для мобильных устройств
-  display: flex; // Используем flex для лучшей адаптации
-  flex-direction: column; // Вертикальное расположение элементов на мобильных
+  width: 90%; // Оставляем ширину
+  margin: 0 auto; // Центрируем контейнер
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .abouth1 {
+    margin-left: 0; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    font-weight: 300;
+  }
 }
 
 // Кнопка с закругленными углами
@@ -75,6 +89,10 @@ $mobile-height: 500px;
   .sub-text-about{
     padding-bottom: 20px;
     width: 90%;
+    h2{
+      font-weight: 600;
+      font-size: 20px;
+    }
   }
   
 
