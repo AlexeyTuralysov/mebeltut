@@ -12,8 +12,8 @@ export const products_item = [
 
     color: ["yellow"],
 
-    type: "Уют",
-    under_type: "Эстетика",
+    type: "Для Офиса",
+    under_type: "Рабочее место",
   },
 
 
@@ -136,6 +136,19 @@ export const products_item = [
 
     type: "Уют",
     under_type: "Эстетика",
+  },
+
+  {
+    id: 11,
+    preview: "https://i.pinimg.com/736x/69/57/30/695730a3b4057c752dc446089ef23dff.jpg",
+    name: 'Стулья',
+    additionalImages: ["https://i.pinimg.com/736x/69/57/30/695730a3b4057c752dc446089ef23dff.jpg","https://i.pinimg.com/736x/8d/30/7d/8d307d77bf7e2312afffc705d7944eb1.jpg"],
+    color: ["yellow"],
+    description: "Отлично подходит если в вашей комнате нужно создать ламповую атмосферу",
+
+    price: 9000,
+    type: "Для Офиса",
+    under_type: "Стулья",
   },
 
 
